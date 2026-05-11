@@ -1,0 +1,18 @@
+{
+  "officialApiUrl": "https://api.taiwanlottery.com/TLCAPIWeB/Lottery/Daily539Result",
+  "officialApiCandidates": [
+    "https://api.taiwanlottery.com/TLCAPIWeB/Lottery/Daily539Result"
+  ],
+  "officialHtmlUrl": "https://www.taiwanlottery.com/lotto/result/daily_cash",
+  "optionalSecondarySourceUrl": "",
+  "syncIntervalMinutes": 30,
+  "recoveryRetryMinutes": 5,
+  "pilio": {
+    "enabled": true,
+    "baseUrl": "https://www.pilio.idv.tw/lto539/listbbk.asp?indexpage=1&orderby=new",
+    "pages": 4,
+    "mode": "verifyOnly",
+    "requestDelayMs": 300,
+    "timeoutMs": 10000
+  }
+}

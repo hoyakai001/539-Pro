@@ -1,0 +1,38 @@
+{
+  "name": "539-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node dist/server.js",
+    "verify:no-mock": "node scripts/verify-no-mock.js",
+    "verify:html-fetch": "node scripts/verify-html-fetch.js",
+    "verify:backtest": "node scripts/verify-backtest-no-future-leak.js",
+    "verify:data-status": "node scripts/verify-data-status.js",
+    "verify:all": "npm run verify:no-mock && npm run verify:backtest"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.7.0",
+    "iconv-lite": "^0.6.3",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.10",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/node-cron": "^3.0.11",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.4.5"
+  }
+}

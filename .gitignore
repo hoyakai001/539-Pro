@@ -1,0 +1,27 @@
+compare-multi-strategy.json
+compare-ensemble-voting.json
+compare-ensemble-voting.*.json
+observe-log.jsonl
+observe-log.*.jsonl
+preview-observations.jsonl
+node_modules/
+.env
+.env.*
+!.env.example
+!.env.cloud-readonly.example
+!.env.local.example
+# 明確排除 production backup（內含 secret）
+.env.production.backup
+*.db
+*.sqlite
+dist/
+frontend/dist/
+backend/data/
+logs/
+temp/
+.DS_Store
+
+.claude/
+.codex-run/
+data/*.sqlite-shm
+data/*.sqlite-wal
