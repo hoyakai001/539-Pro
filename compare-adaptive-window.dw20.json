@@ -1,0 +1,1651 @@
+{
+  "generated_at": "2026-05-12T05:02:23.189Z",
+  "sample_size": 200,
+  "draws_used": 5859,
+  "mode_A_label": "multi_strategy_v1 only (rollback)",
+  "mode_B_label": "multi_strategy_v1 + ensemble_voting_v1 Candidate-C (current production)",
+  "mode_A": {
+    "window_10": {
+      "num_segments": 20,
+      "segment_size": 10,
+      "hit_rate_single": {
+        "mean": 0.11,
+        "stderr": 0.0204,
+        "min": 0,
+        "max": 0.3
+      },
+      "hit_rate_two": {
+        "mean": 0.015,
+        "stderr": 0.0082,
+        "min": 0,
+        "max": 0.1
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.625,
+        "stderr": 0.0497,
+        "min": 0,
+        "max": 1
+      },
+      "max_miss_streak": {
+        "mean": 7.65,
+        "stderr": 0.4661,
+        "min": 4,
+        "max": 10
+      },
+      "coverage_01_39": {
+        "mean": 17.05,
+        "stderr": 0.6303,
+        "min": 12,
+        "max": 21
+      },
+      "core_group_ratio": {
+        "mean": 0.117,
+        "stderr": 0.0208,
+        "min": 0,
+        "max": 0.34
+      },
+      "hot_top10_ratio": {
+        "mean": 0.821,
+        "stderr": 0.018,
+        "min": 0.7,
+        "max": 0.96
+      },
+      "pair_repeat_consecutive": {
+        "mean": 19.45,
+        "stderr": 1.9634,
+        "min": 5,
+        "max": 40
+      },
+      "triple_repeat_consecutive": {
+        "mean": 8.65,
+        "stderr": 1.5463,
+        "min": 0,
+        "max": 28
+      },
+      "single_repeat_consecutive": {
+        "mean": 2.35,
+        "stderr": 0.2542,
+        "min": 0,
+        "max": 4
+      },
+      "max_pair_count": {
+        "mean": 4.7,
+        "stderr": 0.2724,
+        "min": 3,
+        "max": 8
+      },
+      "max_triple_count": {
+        "mean": 3.3,
+        "stderr": 0.2188,
+        "min": 2,
+        "max": 5
+      }
+    },
+    "window_20": {
+      "num_segments": 10,
+      "segment_size": 20,
+      "hit_rate_single": {
+        "mean": 0.11,
+        "stderr": 0.0194,
+        "min": 0,
+        "max": 0.2
+      },
+      "hit_rate_two": {
+        "mean": 0.015,
+        "stderr": 0.0076,
+        "min": 0,
+        "max": 0.05
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.625,
+        "stderr": 0.0261,
+        "min": 0.5,
+        "max": 0.75
+      },
+      "max_miss_streak": {
+        "mean": 12,
+        "stderr": 1.5563,
+        "min": 5,
+        "max": 20
+      },
+      "coverage_01_39": {
+        "mean": 23.4,
+        "stderr": 0.67,
+        "min": 19,
+        "max": 26
+      },
+      "core_group_ratio": {
+        "mean": 0.117,
+        "stderr": 0.023,
+        "min": 0.01,
+        "max": 0.28
+      },
+      "hot_top10_ratio": {
+        "mean": 0.699,
+        "stderr": 0.0146,
+        "min": 0.6,
+        "max": 0.77
+      },
+      "pair_repeat_consecutive": {
+        "mean": 39.7,
+        "stderr": 4.2532,
+        "min": 19,
+        "max": 58
+      },
+      "triple_repeat_consecutive": {
+        "mean": 17.4,
+        "stderr": 3.1665,
+        "min": 5,
+        "max": 34
+      },
+      "single_repeat_consecutive": {
+        "mean": 5,
+        "stderr": 0.4472,
+        "min": 2,
+        "max": 7
+      },
+      "max_pair_count": {
+        "mean": 6,
+        "stderr": 0.4216,
+        "min": 4,
+        "max": 8
+      },
+      "max_triple_count": {
+        "mean": 4,
+        "stderr": 0.3651,
+        "min": 3,
+        "max": 6
+      }
+    },
+    "window_30": {
+      "num_segments": 6,
+      "segment_size": 30,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.0159,
+        "min": 0.0667,
+        "max": 0.1667
+      },
+      "hit_rate_two": {
+        "mean": 0.0167,
+        "stderr": 0.0074,
+        "min": 0,
+        "max": 0.0333
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6333,
+        "stderr": 0.0455,
+        "min": 0.4667,
+        "max": 0.8
+      },
+      "max_miss_streak": {
+        "mean": 18.8333,
+        "stderr": 2.8215,
+        "min": 10,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 26.3333,
+        "stderr": 0.8028,
+        "min": 24,
+        "max": 29
+      },
+      "core_group_ratio": {
+        "mean": 0.1289,
+        "stderr": 0.0224,
+        "min": 0.0867,
+        "max": 0.2267
+      },
+      "hot_top10_ratio": {
+        "mean": 0.6422,
+        "stderr": 0.0269,
+        "min": 0.5533,
+        "max": 0.7267
+      },
+      "pair_repeat_consecutive": {
+        "mean": 58.8333,
+        "stderr": 6.2951,
+        "min": 42,
+        "max": 80
+      },
+      "triple_repeat_consecutive": {
+        "mean": 25.6667,
+        "stderr": 4.6308,
+        "min": 14,
+        "max": 36
+      },
+      "single_repeat_consecutive": {
+        "mean": 7.5,
+        "stderr": 0.7638,
+        "min": 5,
+        "max": 10
+      },
+      "max_pair_count": {
+        "mean": 7.6667,
+        "stderr": 0.8028,
+        "min": 5,
+        "max": 10
+      },
+      "max_triple_count": {
+        "mean": 4.8333,
+        "stderr": 0.4773,
+        "min": 3,
+        "max": 6
+      }
+    },
+    "window_40": {
+      "num_segments": 5,
+      "segment_size": 40,
+      "hit_rate_single": {
+        "mean": 0.11,
+        "stderr": 0.015,
+        "min": 0.075,
+        "max": 0.15
+      },
+      "hit_rate_two": {
+        "mean": 0.015,
+        "stderr": 0.0061,
+        "min": 0,
+        "max": 0.025
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.625,
+        "stderr": 0.0262,
+        "min": 0.575,
+        "max": 0.7
+      },
+      "max_miss_streak": {
+        "mean": 18.4,
+        "stderr": 2.8566,
+        "min": 10,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 29.6,
+        "stderr": 0.9274,
+        "min": 27,
+        "max": 32
+      },
+      "core_group_ratio": {
+        "mean": 0.117,
+        "stderr": 0.0212,
+        "min": 0.085,
+        "max": 0.2
+      },
+      "hot_top10_ratio": {
+        "mean": 0.589,
+        "stderr": 0.0181,
+        "min": 0.55,
+        "max": 0.655
+      },
+      "pair_repeat_consecutive": {
+        "mean": 80.2,
+        "stderr": 7.0029,
+        "min": 59,
+        "max": 103
+      },
+      "triple_repeat_consecutive": {
+        "mean": 34.8,
+        "stderr": 4.684,
+        "min": 18,
+        "max": 44
+      },
+      "single_repeat_consecutive": {
+        "mean": 10.4,
+        "stderr": 1.0296,
+        "min": 7,
+        "max": 13
+      },
+      "max_pair_count": {
+        "mean": 8.4,
+        "stderr": 0.6782,
+        "min": 6,
+        "max": 10
+      },
+      "max_triple_count": {
+        "mean": 5,
+        "stderr": 0.5477,
+        "min": 3,
+        "max": 6
+      }
+    },
+    "window_50": {
+      "num_segments": 4,
+      "segment_size": 50,
+      "hit_rate_single": {
+        "mean": 0.11,
+        "stderr": 0.0208,
+        "min": 0.06,
+        "max": 0.16
+      },
+      "hit_rate_two": {
+        "mean": 0.015,
+        "stderr": 0.005,
+        "min": 0,
+        "max": 0.02
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.625,
+        "stderr": 0.0263,
+        "min": 0.58,
+        "max": 0.7
+      },
+      "max_miss_streak": {
+        "mean": 17.5,
+        "stderr": 3.1754,
+        "min": 14,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 31.25,
+        "stderr": 0.75,
+        "min": 30,
+        "max": 33
+      },
+      "core_group_ratio": {
+        "mean": 0.117,
+        "stderr": 0.0096,
+        "min": 0.096,
+        "max": 0.14
+      },
+      "hot_top10_ratio": {
+        "mean": 0.571,
+        "stderr": 0.0192,
+        "min": 0.516,
+        "max": 0.604
+      },
+      "pair_repeat_consecutive": {
+        "mean": 101.25,
+        "stderr": 12.951,
+        "min": 72,
+        "max": 125
+      },
+      "triple_repeat_consecutive": {
+        "mean": 43.75,
+        "stderr": 9.0035,
+        "min": 24,
+        "max": 60
+      },
+      "single_repeat_consecutive": {
+        "mean": 13,
+        "stderr": 1.7795,
+        "min": 8,
+        "max": 16
+      },
+      "max_pair_count": {
+        "mean": 9.25,
+        "stderr": 1.25,
+        "min": 6,
+        "max": 12
+      },
+      "max_triple_count": {
+        "mean": 5.25,
+        "stderr": 0.4787,
+        "min": 4,
+        "max": 6
+      }
+    },
+    "window_60": {
+      "num_segments": 3,
+      "segment_size": 60,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.02,
+        "min": 0.0667,
+        "max": 0.1333
+      },
+      "hit_rate_two": {
+        "mean": 0.0167,
+        "stderr": 0,
+        "min": 0.0167,
+        "max": 0.0167
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6333,
+        "stderr": 0.0096,
+        "min": 0.6167,
+        "max": 0.65
+      },
+      "max_miss_streak": {
+        "mean": 21,
+        "stderr": 3.4641,
+        "min": 15,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 31.6667,
+        "stderr": 0.6667,
+        "min": 31,
+        "max": 33
+      },
+      "core_group_ratio": {
+        "mean": 0.1289,
+        "stderr": 0.0309,
+        "min": 0.09,
+        "max": 0.19
+      },
+      "hot_top10_ratio": {
+        "mean": 0.5556,
+        "stderr": 0.0155,
+        "min": 0.5267,
+        "max": 0.58
+      },
+      "pair_repeat_consecutive": {
+        "mean": 119,
+        "stderr": 6.0277,
+        "min": 112,
+        "max": 131
+      },
+      "triple_repeat_consecutive": {
+        "mean": 51.6667,
+        "stderr": 0.8819,
+        "min": 50,
+        "max": 53
+      },
+      "single_repeat_consecutive": {
+        "mean": 15.3333,
+        "stderr": 2.3333,
+        "min": 11,
+        "max": 19
+      },
+      "max_pair_count": {
+        "mean": 11,
+        "stderr": 0.5774,
+        "min": 10,
+        "max": 12
+      },
+      "max_triple_count": {
+        "mean": 6,
+        "stderr": 0.5774,
+        "min": 5,
+        "max": 7
+      }
+    },
+    "window_70": {
+      "num_segments": 2,
+      "segment_size": 70,
+      "hit_rate_single": {
+        "mean": 0.0857,
+        "stderr": 0.0143,
+        "min": 0.0714,
+        "max": 0.1
+      },
+      "hit_rate_two": {
+        "mean": 0.0143,
+        "stderr": 0,
+        "min": 0.0143,
+        "max": 0.0143
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6215,
+        "stderr": 0.0072,
+        "min": 0.6143,
+        "max": 0.6286
+      },
+      "max_miss_streak": {
+        "mean": 24,
+        "stderr": 3,
+        "min": 21,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 32.5,
+        "stderr": 0.5,
+        "min": 32,
+        "max": 33
+      },
+      "core_group_ratio": {
+        "mean": 0.1015,
+        "stderr": 0.0072,
+        "min": 0.0943,
+        "max": 0.1086
+      },
+      "hot_top10_ratio": {
+        "mean": 0.5286,
+        "stderr": 0.0086,
+        "min": 0.52,
+        "max": 0.5371
+      },
+      "pair_repeat_consecutive": {
+        "mean": 152,
+        "stderr": 27,
+        "min": 125,
+        "max": 179
+      },
+      "triple_repeat_consecutive": {
+        "mean": 68.5,
+        "stderr": 13.5,
+        "min": 55,
+        "max": 82
+      },
+      "single_repeat_consecutive": {
+        "mean": 17.5,
+        "stderr": 4.5,
+        "min": 13,
+        "max": 22
+      },
+      "max_pair_count": {
+        "mean": 12.5,
+        "stderr": 0.5,
+        "min": 12,
+        "max": 13
+      },
+      "max_triple_count": {
+        "mean": 6.5,
+        "stderr": 0.5,
+        "min": 6,
+        "max": 7
+      }
+    },
+    "window_80": {
+      "num_segments": 2,
+      "segment_size": 80,
+      "hit_rate_single": {
+        "mean": 0.1,
+        "stderr": 0.025,
+        "min": 0.075,
+        "max": 0.125
+      },
+      "hit_rate_two": {
+        "mean": 0.0188,
+        "stderr": 0.0063,
+        "min": 0.0125,
+        "max": 0.025
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6375,
+        "stderr": 0,
+        "min": 0.6375,
+        "max": 0.6375
+      },
+      "max_miss_streak": {
+        "mean": 24,
+        "stderr": 3,
+        "min": 21,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 34,
+        "stderr": 1,
+        "min": 33,
+        "max": 35
+      },
+      "core_group_ratio": {
+        "mean": 0.1238,
+        "stderr": 0.0313,
+        "min": 0.0925,
+        "max": 0.155
+      },
+      "hot_top10_ratio": {
+        "mean": 0.5313,
+        "stderr": 0.0162,
+        "min": 0.515,
+        "max": 0.5475
+      },
+      "pair_repeat_consecutive": {
+        "mean": 161.5,
+        "stderr": 21.5,
+        "min": 140,
+        "max": 183
+      },
+      "triple_repeat_consecutive": {
+        "mean": 71,
+        "stderr": 10,
+        "min": 61,
+        "max": 81
+      },
+      "single_repeat_consecutive": {
+        "mean": 20,
+        "stderr": 3,
+        "min": 17,
+        "max": 23
+      },
+      "max_pair_count": {
+        "mean": 13,
+        "stderr": 1,
+        "min": 12,
+        "max": 14
+      },
+      "max_triple_count": {
+        "mean": 6.5,
+        "stderr": 0.5,
+        "min": 6,
+        "max": 7
+      }
+    },
+    "window_90": {
+      "num_segments": 2,
+      "segment_size": 90,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.0166,
+        "min": 0.0889,
+        "max": 0.1222
+      },
+      "hit_rate_two": {
+        "mean": 0.0167,
+        "stderr": 0.0056,
+        "min": 0.0111,
+        "max": 0.0222
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6334,
+        "stderr": 0.0444,
+        "min": 0.5889,
+        "max": 0.6778
+      },
+      "max_miss_streak": {
+        "mean": 24,
+        "stderr": 3,
+        "min": 21,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 35,
+        "stderr": 0,
+        "min": 35,
+        "max": 35
+      },
+      "core_group_ratio": {
+        "mean": 0.1289,
+        "stderr": 0.04,
+        "min": 0.0889,
+        "max": 0.1689
+      },
+      "hot_top10_ratio": {
+        "mean": 0.53,
+        "stderr": 0.0078,
+        "min": 0.5222,
+        "max": 0.5378
+      },
+      "pair_repeat_consecutive": {
+        "mean": 179,
+        "stderr": 18,
+        "min": 161,
+        "max": 197
+      },
+      "triple_repeat_consecutive": {
+        "mean": 77.5,
+        "stderr": 9.5,
+        "min": 68,
+        "max": 87
+      },
+      "single_repeat_consecutive": {
+        "mean": 22.5,
+        "stderr": 3.5,
+        "min": 19,
+        "max": 26
+      },
+      "max_pair_count": {
+        "mean": 13,
+        "stderr": 1,
+        "min": 12,
+        "max": 14
+      },
+      "max_triple_count": {
+        "mean": 6.5,
+        "stderr": 0.5,
+        "min": 6,
+        "max": 7
+      }
+    },
+    "window_100": {
+      "num_segments": 2,
+      "segment_size": 100,
+      "hit_rate_single": {
+        "mean": 0.11,
+        "stderr": 0.03,
+        "min": 0.08,
+        "max": 0.14
+      },
+      "hit_rate_two": {
+        "mean": 0.015,
+        "stderr": 0.005,
+        "min": 0.01,
+        "max": 0.02
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.625,
+        "stderr": 0.015,
+        "min": 0.61,
+        "max": 0.64
+      },
+      "max_miss_streak": {
+        "mean": 21,
+        "stderr": 6,
+        "min": 15,
+        "max": 27
+      },
+      "coverage_01_39": {
+        "mean": 35.5,
+        "stderr": 0.5,
+        "min": 35,
+        "max": 36
+      },
+      "core_group_ratio": {
+        "mean": 0.117,
+        "stderr": 0.015,
+        "min": 0.102,
+        "max": 0.132
+      },
+      "hot_top10_ratio": {
+        "mean": 0.522,
+        "stderr": 0.01,
+        "min": 0.512,
+        "max": 0.532
+      },
+      "pair_repeat_consecutive": {
+        "mean": 202.5,
+        "stderr": 9.5,
+        "min": 193,
+        "max": 212
+      },
+      "triple_repeat_consecutive": {
+        "mean": 87.5,
+        "stderr": 5.5,
+        "min": 82,
+        "max": 93
+      },
+      "single_repeat_consecutive": {
+        "mean": 26,
+        "stderr": 3,
+        "min": 23,
+        "max": 29
+      },
+      "max_pair_count": {
+        "mean": 16.5,
+        "stderr": 0.5,
+        "min": 16,
+        "max": 17
+      },
+      "max_triple_count": {
+        "mean": 7,
+        "stderr": 0,
+        "min": 7,
+        "max": 7
+      }
+    }
+  },
+  "mode_B": {
+    "window_10": {
+      "num_segments": 20,
+      "segment_size": 10,
+      "hit_rate_single": {
+        "mean": 0.095,
+        "stderr": 0.0344,
+        "min": 0,
+        "max": 0.6
+      },
+      "hit_rate_two": {
+        "mean": 0.01,
+        "stderr": 0.01,
+        "min": 0,
+        "max": 0.2
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.585,
+        "stderr": 0.0586,
+        "min": 0.1,
+        "max": 1.1
+      },
+      "max_miss_streak": {
+        "mean": 8.15,
+        "stderr": 0.5816,
+        "min": 2,
+        "max": 10
+      },
+      "coverage_01_39": {
+        "mean": 24.05,
+        "stderr": 0.426,
+        "min": 21,
+        "max": 29
+      },
+      "core_group_ratio": {
+        "mean": 0.131,
+        "stderr": 0.0106,
+        "min": 0.06,
+        "max": 0.24
+      },
+      "hot_top10_ratio": {
+        "mean": 0.632,
+        "stderr": 0.009,
+        "min": 0.54,
+        "max": 0.72
+      },
+      "pair_repeat_consecutive": {
+        "mean": 0.6,
+        "stderr": 0.1974,
+        "min": 0,
+        "max": 3
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.05,
+        "stderr": 0.05,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 0.5,
+        "stderr": 0.185,
+        "min": 0,
+        "max": 3
+      },
+      "max_pair_count": {
+        "mean": 3.15,
+        "stderr": 0.1313,
+        "min": 2,
+        "max": 4
+      },
+      "max_triple_count": {
+        "mean": 2.1,
+        "stderr": 0.0688,
+        "min": 2,
+        "max": 3
+      }
+    },
+    "window_20": {
+      "num_segments": 10,
+      "segment_size": 20,
+      "hit_rate_single": {
+        "mean": 0.095,
+        "stderr": 0.0302,
+        "min": 0,
+        "max": 0.3
+      },
+      "hit_rate_two": {
+        "mean": 0.01,
+        "stderr": 0.01,
+        "min": 0,
+        "max": 0.1
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.585,
+        "stderr": 0.0543,
+        "min": 0.3,
+        "max": 0.95
+      },
+      "max_miss_streak": {
+        "mean": 13.6,
+        "stderr": 1.4697,
+        "min": 9,
+        "max": 20
+      },
+      "coverage_01_39": {
+        "mean": 32.7,
+        "stderr": 0.3667,
+        "min": 31,
+        "max": 35
+      },
+      "core_group_ratio": {
+        "mean": 0.131,
+        "stderr": 0.0071,
+        "min": 0.1,
+        "max": 0.18
+      },
+      "hot_top10_ratio": {
+        "mean": 0.469,
+        "stderr": 0.0078,
+        "min": 0.42,
+        "max": 0.5
+      },
+      "pair_repeat_consecutive": {
+        "mean": 1.3,
+        "stderr": 0.5385,
+        "min": 0,
+        "max": 4
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.1,
+        "stderr": 0.1,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 1.1,
+        "stderr": 0.2769,
+        "min": 0,
+        "max": 3
+      },
+      "max_pair_count": {
+        "mean": 3.7,
+        "stderr": 0.2134,
+        "min": 3,
+        "max": 5
+      },
+      "max_triple_count": {
+        "mean": 2.3,
+        "stderr": 0.1528,
+        "min": 2,
+        "max": 3
+      }
+    },
+    "window_30": {
+      "num_segments": 6,
+      "segment_size": 30,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.0379,
+        "min": 0,
+        "max": 0.2667
+      },
+      "hit_rate_two": {
+        "mean": 0.0111,
+        "stderr": 0.0111,
+        "min": 0,
+        "max": 0.0667
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.5945,
+        "stderr": 0.058,
+        "min": 0.3667,
+        "max": 0.8
+      },
+      "max_miss_streak": {
+        "mean": 17.3333,
+        "stderr": 3.4512,
+        "min": 9,
+        "max": 30
+      },
+      "coverage_01_39": {
+        "mean": 36.1667,
+        "stderr": 0.6009,
+        "min": 35,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.1334,
+        "stderr": 0.0081,
+        "min": 0.1067,
+        "max": 0.1667
+      },
+      "hot_top10_ratio": {
+        "mean": 0.4433,
+        "stderr": 0.0123,
+        "min": 0.4,
+        "max": 0.48
+      },
+      "pair_repeat_consecutive": {
+        "mean": 2,
+        "stderr": 0.9309,
+        "min": 0,
+        "max": 5
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.1667,
+        "stderr": 0.1667,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 1.5,
+        "stderr": 0.5627,
+        "min": 0,
+        "max": 4
+      },
+      "max_pair_count": {
+        "mean": 5,
+        "stderr": 0.4472,
+        "min": 4,
+        "max": 6
+      },
+      "max_triple_count": {
+        "mean": 2.6667,
+        "stderr": 0.2108,
+        "min": 2,
+        "max": 3
+      }
+    },
+    "window_40": {
+      "num_segments": 5,
+      "segment_size": 40,
+      "hit_rate_single": {
+        "mean": 0.095,
+        "stderr": 0.0289,
+        "min": 0,
+        "max": 0.175
+      },
+      "hit_rate_two": {
+        "mean": 0.01,
+        "stderr": 0.01,
+        "min": 0,
+        "max": 0.05
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.585,
+        "stderr": 0.0568,
+        "min": 0.4,
+        "max": 0.75
+      },
+      "max_miss_streak": {
+        "mean": 22.2,
+        "stderr": 4.9437,
+        "min": 12,
+        "max": 40
+      },
+      "coverage_01_39": {
+        "mean": 37.6,
+        "stderr": 0.6782,
+        "min": 36,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.131,
+        "stderr": 0.0066,
+        "min": 0.11,
+        "max": 0.145
+      },
+      "hot_top10_ratio": {
+        "mean": 0.416,
+        "stderr": 0.0051,
+        "min": 0.405,
+        "max": 0.435
+      },
+      "pair_repeat_consecutive": {
+        "mean": 2.6,
+        "stderr": 1.077,
+        "min": 0,
+        "max": 5
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.2,
+        "stderr": 0.2,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 2.2,
+        "stderr": 0.5831,
+        "min": 1,
+        "max": 4
+      },
+      "max_pair_count": {
+        "mean": 5.2,
+        "stderr": 0.3742,
+        "min": 4,
+        "max": 6
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_50": {
+      "num_segments": 4,
+      "segment_size": 50,
+      "hit_rate_single": {
+        "mean": 0.095,
+        "stderr": 0.033,
+        "min": 0.02,
+        "max": 0.16
+      },
+      "hit_rate_two": {
+        "mean": 0.01,
+        "stderr": 0.01,
+        "min": 0,
+        "max": 0.04
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.585,
+        "stderr": 0.015,
+        "min": 0.54,
+        "max": 0.6
+      },
+      "max_miss_streak": {
+        "mean": 20.25,
+        "stderr": 5.8077,
+        "min": 11,
+        "max": 36
+      },
+      "coverage_01_39": {
+        "mean": 38.25,
+        "stderr": 0.4787,
+        "min": 37,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.131,
+        "stderr": 0.0047,
+        "min": 0.124,
+        "max": 0.144
+      },
+      "hot_top10_ratio": {
+        "mean": 0.399,
+        "stderr": 0.0102,
+        "min": 0.376,
+        "max": 0.42
+      },
+      "pair_repeat_consecutive": {
+        "mean": 3.25,
+        "stderr": 1.25,
+        "min": 0,
+        "max": 6
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.25,
+        "stderr": 0.25,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 2.75,
+        "stderr": 1.1087,
+        "min": 1,
+        "max": 6
+      },
+      "max_pair_count": {
+        "mean": 6,
+        "stderr": 0.5774,
+        "min": 5,
+        "max": 7
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_60": {
+      "num_segments": 3,
+      "segment_size": 60,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.0294,
+        "min": 0.05,
+        "max": 0.15
+      },
+      "hit_rate_two": {
+        "mean": 0.0111,
+        "stderr": 0.0111,
+        "min": 0,
+        "max": 0.0333
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.5944,
+        "stderr": 0.0772,
+        "min": 0.4667,
+        "max": 0.7333
+      },
+      "max_miss_streak": {
+        "mean": 28.6667,
+        "stderr": 11.0504,
+        "min": 13,
+        "max": 50
+      },
+      "coverage_01_39": {
+        "mean": 39,
+        "stderr": 0,
+        "min": 39,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.1333,
+        "stderr": 0.007,
+        "min": 0.1233,
+        "max": 0.1467
+      },
+      "hot_top10_ratio": {
+        "mean": 0.3866,
+        "stderr": 0.0033,
+        "min": 0.3833,
+        "max": 0.3933
+      },
+      "pair_repeat_consecutive": {
+        "mean": 4,
+        "stderr": 2.3094,
+        "min": 0,
+        "max": 8
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.3333,
+        "stderr": 0.3333,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 3,
+        "stderr": 1,
+        "min": 2,
+        "max": 5
+      },
+      "max_pair_count": {
+        "mean": 7,
+        "stderr": 0.5774,
+        "min": 6,
+        "max": 8
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_70": {
+      "num_segments": 2,
+      "segment_size": 70,
+      "hit_rate_single": {
+        "mean": 0.1143,
+        "stderr": 0,
+        "min": 0.1143,
+        "max": 0.1143
+      },
+      "hit_rate_two": {
+        "mean": 0.0143,
+        "stderr": 0.0143,
+        "min": 0,
+        "max": 0.0286
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.6072,
+        "stderr": 0.0215,
+        "min": 0.5857,
+        "max": 0.6286
+      },
+      "max_miss_streak": {
+        "mean": 20,
+        "stderr": 6,
+        "min": 14,
+        "max": 26
+      },
+      "coverage_01_39": {
+        "mean": 39,
+        "stderr": 0,
+        "min": 39,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.1271,
+        "stderr": 0.0014,
+        "min": 0.1257,
+        "max": 0.1286
+      },
+      "hot_top10_ratio": {
+        "mean": 0.3786,
+        "stderr": 0.0015,
+        "min": 0.3771,
+        "max": 0.38
+      },
+      "pair_repeat_consecutive": {
+        "mean": 2.5,
+        "stderr": 1.5,
+        "min": 1,
+        "max": 4
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "single_repeat_consecutive": {
+        "mean": 2.5,
+        "stderr": 0.5,
+        "min": 2,
+        "max": 3
+      },
+      "max_pair_count": {
+        "mean": 7,
+        "stderr": 0,
+        "min": 7,
+        "max": 7
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_80": {
+      "num_segments": 2,
+      "segment_size": 80,
+      "hit_rate_single": {
+        "mean": 0.1,
+        "stderr": 0.0125,
+        "min": 0.0875,
+        "max": 0.1125
+      },
+      "hit_rate_two": {
+        "mean": 0.0125,
+        "stderr": 0.0125,
+        "min": 0,
+        "max": 0.025
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.5938,
+        "stderr": 0.0188,
+        "min": 0.575,
+        "max": 0.6125
+      },
+      "max_miss_streak": {
+        "mean": 30,
+        "stderr": 16,
+        "min": 14,
+        "max": 46
+      },
+      "coverage_01_39": {
+        "mean": 39,
+        "stderr": 0,
+        "min": 39,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.1275,
+        "stderr": 0,
+        "min": 0.1275,
+        "max": 0.1275
+      },
+      "hot_top10_ratio": {
+        "mean": 0.3725,
+        "stderr": 0.005,
+        "min": 0.3675,
+        "max": 0.3775
+      },
+      "pair_repeat_consecutive": {
+        "mean": 4,
+        "stderr": 0,
+        "min": 4,
+        "max": 4
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "single_repeat_consecutive": {
+        "mean": 4,
+        "stderr": 2,
+        "min": 2,
+        "max": 6
+      },
+      "max_pair_count": {
+        "mean": 7,
+        "stderr": 0,
+        "min": 7,
+        "max": 7
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_90": {
+      "num_segments": 2,
+      "segment_size": 90,
+      "hit_rate_single": {
+        "mean": 0.1056,
+        "stderr": 0.0611,
+        "min": 0.0444,
+        "max": 0.1667
+      },
+      "hit_rate_two": {
+        "mean": 0.0111,
+        "stderr": 0.0111,
+        "min": 0,
+        "max": 0.0222
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.5944,
+        "stderr": 0.0611,
+        "min": 0.5333,
+        "max": 0.6556
+      },
+      "max_miss_streak": {
+        "mean": 35,
+        "stderr": 21,
+        "min": 14,
+        "max": 56
+      },
+      "coverage_01_39": {
+        "mean": 39,
+        "stderr": 0,
+        "min": 39,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.1333,
+        "stderr": 0,
+        "min": 0.1333,
+        "max": 0.1333
+      },
+      "hot_top10_ratio": {
+        "mean": 0.36,
+        "stderr": 0.0022,
+        "min": 0.3578,
+        "max": 0.3622
+      },
+      "pair_repeat_consecutive": {
+        "mean": 6,
+        "stderr": 2,
+        "min": 4,
+        "max": 8
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.5,
+        "stderr": 0.5,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 4.5,
+        "stderr": 2.5,
+        "min": 2,
+        "max": 7
+      },
+      "max_pair_count": {
+        "mean": 7.5,
+        "stderr": 0.5,
+        "min": 7,
+        "max": 8
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "window_100": {
+      "num_segments": 2,
+      "segment_size": 100,
+      "hit_rate_single": {
+        "mean": 0.095,
+        "stderr": 0.055,
+        "min": 0.04,
+        "max": 0.15
+      },
+      "hit_rate_two": {
+        "mean": 0.01,
+        "stderr": 0.01,
+        "min": 0,
+        "max": 0.02
+      },
+      "hit_rate_three_full": {
+        "mean": 0,
+        "stderr": 0,
+        "min": 0,
+        "max": 0
+      },
+      "average_hits_per_draw": {
+        "mean": 0.585,
+        "stderr": 0.015,
+        "min": 0.57,
+        "max": 0.6
+      },
+      "max_miss_streak": {
+        "mean": 35,
+        "stderr": 21,
+        "min": 14,
+        "max": 56
+      },
+      "coverage_01_39": {
+        "mean": 39,
+        "stderr": 0,
+        "min": 39,
+        "max": 39
+      },
+      "core_group_ratio": {
+        "mean": 0.131,
+        "stderr": 0.003,
+        "min": 0.128,
+        "max": 0.134
+      },
+      "hot_top10_ratio": {
+        "mean": 0.356,
+        "stderr": 0.004,
+        "min": 0.352,
+        "max": 0.36
+      },
+      "pair_repeat_consecutive": {
+        "mean": 6.5,
+        "stderr": 2.5,
+        "min": 4,
+        "max": 9
+      },
+      "triple_repeat_consecutive": {
+        "mean": 0.5,
+        "stderr": 0.5,
+        "min": 0,
+        "max": 1
+      },
+      "single_repeat_consecutive": {
+        "mean": 5.5,
+        "stderr": 2.5,
+        "min": 3,
+        "max": 8
+      },
+      "max_pair_count": {
+        "mean": 8,
+        "stderr": 0,
+        "min": 8,
+        "max": 8
+      },
+      "max_triple_count": {
+        "mean": 3,
+        "stderr": 0,
+        "min": 3,
+        "max": 3
+      }
+    }
+  }
+}

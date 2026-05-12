@@ -18,6 +18,7 @@
 
 5. **[ENSEMBLE_VOTING_DESIGN.md](ENSEMBLE_VOTING_DESIGN.md)** — Phase 2 / 2.5 meta voting 完整設計
 6. **[ENSEMBLE_VOTING_COMPARE.md](ENSEMBLE_VOTING_COMPARE.md)** — Phase 2 / 2.5 compare 數據 + Candidate C 來源
+7. **[DYNAMIC_WINDOW_DESIGN.md](DYNAMIC_WINDOW_DESIGN.md)** — Phase 3 dynamic window v1 設計（預設 OFF）
 
 **策略演進歷史（不需常看）：**
 

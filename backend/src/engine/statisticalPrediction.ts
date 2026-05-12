@@ -36,6 +36,12 @@ function computeCacheSchema(): string {
   if (isEnsembleVotingEnabled()) {
     s = `${s}+${process.env['ENSEMBLE_VOTING_VERSION'] || ENSEMBLE_VOTING_DEFAULT_VERSION}`;
   }
+  // Dynamic Window 啟用時加 schema 後綴，舊 cache 自動失效
+  const dwEnabled = ((process.env['DYNAMIC_WINDOW_ENABLED'] ?? '').trim().toLowerCase() === 'true'
+    || process.env['DYNAMIC_WINDOW_ENABLED'] === '1');
+  if (dwEnabled) {
+    s = `${s}+${process.env['DYNAMIC_WINDOW_VERSION'] || 'dynamic_window_v1'}`;
+  }
   return s;
 }
 export const PREDICTION_CACHE_SCHEMA: string = computeCacheSchema();
@@ -63,6 +69,8 @@ export interface TransparentNumberScore extends NumberAnalysisRow {
   exposure_penalty?: number;
   core_group_penalty?: number;
   hot_top10_penalty?: number;
+  structure_factor?: number;
+  dynamic_window_factor?: number;
   consensus_protected?: boolean;
   final_vote_score?: number;
   final_vote_rank?: number;

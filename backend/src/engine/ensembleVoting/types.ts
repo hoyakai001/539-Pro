@@ -88,6 +88,10 @@ export interface NumberMetaVote {
   hot_top10_penalty: number;
   /** consensus_protection 是否生效（support >= MIN_SUPPORT 時 true） */
   consensus_protected: boolean;
+  /** structure_adjust 倍率（範圍 [1-W, 1+W]；W=0 或 disabled 時 = 1.0） */
+  structure_factor: number;
+  /** dynamic_window 倍率（範圍 [1-W, 1+W]；disabled / dormant 時 = 1.0） */
+  dynamic_window_factor: number;
   /** weighted vote 累計，未套 penalty 前 */
   base_vote_score: number;
   /** 套完 dominance / pair-lock / triple-lock 後的最終投票分數 */
@@ -125,4 +129,9 @@ export interface EnsembleVotingResult {
   core_group_penalty_applied: number;
   hot_top10_penalty_applied: number;
   consensus_protected_count: number;
+  structure_adjust_applied: number;
+  structure_mean_factor: number;
+  dynamic_window_applied: number;
+  dynamic_window_mean_factor: number;
+  dynamic_window_dormant_reason: string | null;
 }

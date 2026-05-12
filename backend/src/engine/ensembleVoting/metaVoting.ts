@@ -25,6 +25,7 @@
  * 嚴格禁止：random / blacklist / hard ban。所有 penalty 都是 deterministic 倍率。
  */
 
+import type { DrawEntry } from '../features';
 import type { EnsembleVotingConfig } from './config';
 import type {
   EnsembleStrategyVote,
@@ -34,6 +35,8 @@ import type {
   RecentRecommendation,
   EnsembleStrategyName,
 } from './types';
+import { computeStructureFactor, type StructureFactorResult } from './structureAdjust';
+import { computeDynamicWindowFactor, type DynamicWindowResult } from './dynamicWindow';
 
 const ALL_NUMBERS = Array.from({ length: 39 }, (_, i) => i + 1);
 
@@ -132,6 +135,7 @@ export function metaVote(
   votes: Record<EnsembleStrategyName, EnsembleStrategyVote>,
   recent: RecentRecommendation[],
   config: EnsembleVotingConfig,
+  draws?: DrawEntry[],
 ): EnsembleVotingResult {
   const { pairHits, tripleHits } = buildPairTripleHits(recent, config.pairLockWindow);
   // triple 視窗可能不同；分開算
@@ -243,6 +247,8 @@ export function metaVote(
       exposure_penalty,
       core_group_penalty,
       hot_top10_penalty: 1.0,  // 後處理填入
+      structure_factor: 1.0,    // 後處理填入（若啟用）
+      dynamic_window_factor: 1.0,  // 後處理填入（若啟用）
       consensus_protected,
       base_vote_score,
       final_vote_score,
@@ -251,6 +257,51 @@ export function metaVote(
   }
 
   let ranking = rankNumbers(meta);
+
+  // ── Structure Adjustment（輕量結構修正；soft 倍率）───────────────────
+  // 在 base/penalty 計算結束、ranking 算完後，套一次乘性微調。
+  // 預設關閉（W=0 或 ENABLED=false）；啟用時最多 ±W 倍率（W ≤ 0.5）。
+  // 結構訊號全部從歷史 draws 與最近 prediction 推導，無任何 hardcoded 號碼。
+  let structure_adjust_applied = 0;
+  let structure_mean_factor = 1.0;
+  let structureResult: StructureFactorResult | null = null;
+  if (config.structureAdjustEnabled && config.structureAdjustWeight > 0 && draws && draws.length > 0) {
+    structureResult = computeStructureFactor(draws, recent, config);
+    structure_adjust_applied = structureResult.applied_count;
+    structure_mean_factor = structureResult.mean_factor;
+    for (const n of ALL_NUMBERS) {
+      const factor = structureResult.factors[n] ?? 1.0;
+      meta[n].structure_factor = factor;
+      meta[n].final_vote_score *= factor;
+    }
+    ranking = rankNumbers(meta);
+  } else {
+    for (const n of ALL_NUMBERS) meta[n].structure_factor = 1.0;
+  }
+
+  // ── Dynamic Window soft re-weighting（v1）─────────────────────────────
+  // 在 structure_adjust 之後、anti-dominance 之前。
+  // 預設關閉（W=0 或 ENABLED=false 或 draws 不夠 → dormant no-op）。
+  // 訊號從真實歷史開獎多視窗加權頻率推導，無 hardcoded 號碼、不使用隨機數。
+  let dynamic_window_applied = 0;
+  let dynamic_window_mean_factor = 1.0;
+  let dynamic_window_dormant_reason: string | null = null;
+  if (config.dynamicWindowEnabled && config.dynamicWindowWeight > 0 && draws && draws.length > 0) {
+    const dwResult: DynamicWindowResult = computeDynamicWindowFactor(draws, config);
+    dynamic_window_applied = dwResult.applied_count;
+    dynamic_window_mean_factor = dwResult.mean_factor;
+    dynamic_window_dormant_reason = dwResult.dormant_reason;
+    if (!dwResult.dormant_reason) {
+      for (const n of ALL_NUMBERS) {
+        const factor = dwResult.factors[n] ?? 1.0;
+        meta[n].dynamic_window_factor = factor;
+        meta[n].final_vote_score *= factor;
+      }
+      ranking = rankNumbers(meta);
+    }
+  } else {
+    dynamic_window_dormant_reason = 'feature disabled';
+  }
 
   // Anti-Dominance 後處理：若 top10 中 trend-only 比例過高 → 對 trend-only 額外衰減 → 重排
   const top10 = ranking.slice(0, 10);
@@ -337,5 +388,10 @@ export function metaVote(
     core_group_penalty_applied,
     hot_top10_penalty_applied,
     consensus_protected_count,
+    structure_adjust_applied,
+    structure_mean_factor,
+    dynamic_window_applied,
+    dynamic_window_mean_factor,
+    dynamic_window_dormant_reason,
   };
 }

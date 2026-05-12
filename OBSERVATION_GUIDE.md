@@ -109,6 +109,14 @@
 
 回傳最近 N（1–100，default 20）筆完整 observation 記錄。
 
+**支援的常用 window**：10 / 20 / 30 / 40 / 50 / 60 / 70 / 80 / 90 / 100
+（實際上接受 1–100 任意整數；超出範圍會被 clamp）。
+
+讀取量保護：
+- `getObservations(limit)` 內 `orderBy('target_draw_no', 'desc').limit(limit)` → 永不掃全集合
+- API 層 clamp 到 [1, 100]
+- 一次呼叫最多讀 100 個 doc（Firestore 計費上限以內）
+
 ```json
 {
   "success": true,

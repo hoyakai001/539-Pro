@@ -89,6 +89,7 @@
     "verify:local": "node scripts/verify-local.js",
     "compare:multi-strategy": "node scripts/compare-multi-strategy.js",
     "compare:ensemble-voting": "node scripts/compare-ensemble-voting.js",
+    "compare:adaptive-window": "node scripts/compare-adaptive-window.js",
     "observe:prediction": "node scripts/observe-prediction.js",
     "observe:stats": "node scripts/observe-stats.js"
   },

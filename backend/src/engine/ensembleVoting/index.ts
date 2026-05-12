@@ -103,7 +103,7 @@ export function applyEnsembleVoting(
     coverage: coverageStrategy(recent, config, baseline),
   };
 
-  const result = metaVote(votes, recent, config);
+  const result = metaVote(votes, recent, config, draws);
   const five = sortNumbers(result.picks.five_star);
   const four = sortNumbers(result.picks.four_star);
   const three = sortNumbers(result.picks.three_star);
@@ -131,6 +131,8 @@ export function applyEnsembleVoting(
         exposure_penalty: round(m.exposure_penalty),
         core_group_penalty: round(m.core_group_penalty),
         hot_top10_penalty: round(m.hot_top10_penalty),
+        structure_factor: round(m.structure_factor),
+        dynamic_window_factor: round(m.dynamic_window_factor),
         consensus_protected: m.consensus_protected,
         final_vote_score: round(m.final_vote_score),
         final_vote_rank: m.final_vote_rank,
@@ -187,6 +189,17 @@ export function applyEnsembleVoting(
     core_group_penalty_applied: result.core_group_penalty_applied,
     hot_top10_penalty_applied: result.hot_top10_penalty_applied,
     consensus_protected_count: result.consensus_protected_count,
+    structure_adjust_enabled: config.structureAdjustEnabled,
+    structure_adjust_weight: config.structureAdjustWeight,
+    structure_adjust_applied: result.structure_adjust_applied,
+    structure_mean_factor: round(result.structure_mean_factor),
+    dynamic_window_enabled: config.dynamicWindowEnabled,
+    dynamic_window_version: config.dynamicWindowVersion,
+    dynamic_window_weight: config.dynamicWindowWeight,
+    dynamic_window_applied: result.dynamic_window_applied,
+    dynamic_window_mean_factor: round(result.dynamic_window_mean_factor),
+    dynamic_window_dormant_reason: result.dynamic_window_dormant_reason ?? '',
+    dynamic_window_weights: JSON.stringify(config.dynamicWindowWeights),
     ensemble_top_k: config.topK,
     ensemble_min_support_strategies: config.minSupportStrategies,
   };

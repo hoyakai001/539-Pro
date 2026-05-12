@@ -62,6 +62,27 @@ export interface EnsembleVotingConfig {
   consensusProtectionMinSupport: number;
   /** 嚴重度降低係數（0-1）：penalty -> 1 + (penalty - 1) * factor。0=完全保護、1=不保護 */
   consensusProtectionFactor: number;
+
+  // ─── 輕量結構修正 / Structure Adjustment（soft adjustment；預設關閉） ─────
+  /** 啟用 structure_adjust 後處理；只在 ensemble 啟用時才會生效 */
+  structureAdjustEnabled: boolean;
+  /** 倍率上下界（0-0.5）：factor 範圍 [1 - W, 1 + W]，0 = no-op */
+  structureAdjustWeight: number;
+
+  // ─── Dynamic Window soft re-weighting（v1；預設關閉） ─────────────────────
+  /** 啟用 dynamic window 後處理；只在 ensemble 啟用時才會生效 */
+  dynamicWindowEnabled: boolean;
+  /** dynamic_window_v1 / 之後升級的 schema 後綴 */
+  dynamicWindowVersion: string;
+  /** 倍率上下界（0-0.5），factor 範圍 [1-W, 1+W]，0 = no-op */
+  dynamicWindowWeight: number;
+  /** 最少需要這麼多 draws 才會啟動（dormant guard） */
+  dynamicWindowMinObservations: number;
+  /** Min / Max window 邊界（diagnostic，不直接影響演算法） */
+  dynamicWindowMinWindow: number;
+  dynamicWindowMaxWindow: number;
+  /** 各 window 的權重；adaptive backtest 顯示 30/60/70/80 訊號最強 */
+  dynamicWindowWeights: { window: number; weight: number }[];
 }
 
 function num(envKey: string, defaultValue: number): number {
@@ -131,5 +152,21 @@ export function getEnsembleVotingConfig(): EnsembleVotingConfig {
     coreGroupMaxExposure: intMin(num('ENSEMBLE_CORE_GROUP_MAX_EXPOSURE', 4), 1),
     consensusProtectionMinSupport: intMin(num('ENSEMBLE_CONSENSUS_PROTECTION_MIN_SUPPORT', 3), 1),
     consensusProtectionFactor: clamp01(num('ENSEMBLE_CONSENSUS_PROTECTION_FACTOR', 0.50)),
+    structureAdjustEnabled: ((process.env['STRUCTURE_ADJUST_ENABLED'] ?? '').trim().toLowerCase() === 'true'
+      || process.env['STRUCTURE_ADJUST_ENABLED'] === '1'),
+    structureAdjustWeight: Math.max(0, Math.min(0.5, num('STRUCTURE_ADJUST_WEIGHT', 0))),
+    dynamicWindowEnabled: ((process.env['DYNAMIC_WINDOW_ENABLED'] ?? '').trim().toLowerCase() === 'true'
+      || process.env['DYNAMIC_WINDOW_ENABLED'] === '1'),
+    dynamicWindowVersion: process.env['DYNAMIC_WINDOW_VERSION'] || 'dynamic_window_v1',
+    dynamicWindowWeight: Math.max(0, Math.min(0.5, num('DYNAMIC_WINDOW_WEIGHT', 0))),
+    dynamicWindowMinObservations: intMin(num('DYNAMIC_WINDOW_MIN_OBSERVATIONS', 30), 10),
+    dynamicWindowMinWindow: intMin(num('DYNAMIC_WINDOW_MIN_WINDOW', 10), 1),
+    dynamicWindowMaxWindow: intMin(num('DYNAMIC_WINDOW_MAX_WINDOW', 100), 10),
+    dynamicWindowWeights: [
+      { window: intMin(num('DYNAMIC_WINDOW_W1', 30), 1), weight: Math.max(0, num('DYNAMIC_WINDOW_W1_WEIGHT', 0.35)) },
+      { window: intMin(num('DYNAMIC_WINDOW_W2', 60), 1), weight: Math.max(0, num('DYNAMIC_WINDOW_W2_WEIGHT', 0.30)) },
+      { window: intMin(num('DYNAMIC_WINDOW_W3', 70), 1), weight: Math.max(0, num('DYNAMIC_WINDOW_W3_WEIGHT', 0.20)) },
+      { window: intMin(num('DYNAMIC_WINDOW_W4', 80), 1), weight: Math.max(0, num('DYNAMIC_WINDOW_W4_WEIGHT', 0.15)) },
+    ],
   };
 }

@@ -270,11 +270,18 @@ function runMode(modeName, multiEnabled, ensembleEnabled) {
     };
   }
 
-  // Build per-window aggregates
+  // Build per-window aggregates (rolling, newest-first)
   const windows = {
     recent_10: aggregate(records.slice(-10)),
     recent_20: aggregate(records.slice(-20)),
     recent_30: aggregate(records.slice(-30)),
+    recent_40: aggregate(records.slice(-40)),
+    recent_50: aggregate(records.slice(-50)),
+    recent_60: aggregate(records.slice(-60)),
+    recent_70: aggregate(records.slice(-70)),
+    recent_80: aggregate(records.slice(-80)),
+    recent_90: aggregate(records.slice(-90)),
+    recent_100: aggregate(records.slice(-100)),
     all: aggregate(records),
   };
 
@@ -480,7 +487,7 @@ function get(o, path) {
 }
 function pad(s, n) { s = String(s == null ? '-' : s); return s + ' '.repeat(Math.max(0, n - s.length)); }
 function fmt(v, dec) { if (v == null) return '-'; return typeof v === 'number' ? v.toFixed(dec) : String(v); }
-const WINDOWS = ['recent_10', 'recent_20', 'recent_30', 'all'];
+const WINDOWS = ['recent_10', 'recent_20', 'recent_30', 'recent_40', 'recent_50', 'recent_60', 'recent_70', 'recent_80', 'recent_90', 'recent_100', 'all'];
 console.log('==== ROLLING-WINDOW SUMMARY (variant: ' + (variantLabel || 'default') + ') ====');
 for (const w of WINDOWS) {
   console.log('');

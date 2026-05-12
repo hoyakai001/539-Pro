@@ -156,6 +156,25 @@ baseline 行為，全部 default 已穩定。**production 預設不設 = 全部 
 | `ENSEMBLE_CONSENSUS_PROTECTION_MIN_SUPPORT` | `3` | default | 共識保護門檻 |
 | `ENSEMBLE_CONSENSUS_PROTECTION_FACTOR` | `0.50` | default | 共識保護嚴重度減半 |
 
+## 8.5 Dynamic Window v1（soft 多視窗 re-weighting；預設關閉）
+
+詳見 [DYNAMIC_WINDOW_DESIGN.md](DYNAMIC_WINDOW_DESIGN.md)。
+
+| ENV | Default | Production 當前 | 用途 |
+|---|---|---|---|
+| `DYNAMIC_WINDOW_ENABLED` | `false` | `false` | 總開關 |
+| `DYNAMIC_WINDOW_VERSION` | `dynamic_window_v1` | same | cache schema 後綴 |
+| `DYNAMIC_WINDOW_WEIGHT` | `0` | `0` | 倍率上限（建議 0.05） |
+| `DYNAMIC_WINDOW_MIN_OBSERVATIONS` | `30` | default | draws 不足時 dormant |
+| `DYNAMIC_WINDOW_MIN_WINDOW` | `10` | default | 視窗下限（diagnostic） |
+| `DYNAMIC_WINDOW_MAX_WINDOW` | `100` | default | 視窗上限（diagnostic） |
+| `DYNAMIC_WINDOW_W1` / `W1_WEIGHT` | `30` / `0.35` | default | 視窗 1 與權重 |
+| `DYNAMIC_WINDOW_W2` / `W2_WEIGHT` | `60` / `0.30` | default | 視窗 2 |
+| `DYNAMIC_WINDOW_W3` / `W3_WEIGHT` | `70` / `0.20` | default | 視窗 3 |
+| `DYNAMIC_WINDOW_W4` / `W4_WEIGHT` | `80` / `0.15` | default | 視窗 4 |
+
+啟用條件：`MULTI_STRATEGY_ENABLED=true` + `ENSEMBLE_VOTING_ENABLED=true`。
+
 ## 9. LEGACY / DEPRECATED（已於 2026-05 cleanup 移除）
 
 下面這些 ENV **曾經出現在 .env.example 但完全沒被任何程式碼引用**，已從 .env.example 刪除：
